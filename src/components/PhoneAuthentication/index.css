@@ -1,0 +1,108 @@
+.phone-icon {
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+}
+.input-container2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+.input-label2 {
+  margin-bottom: 20px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 39px;
+  line-height: 1.5;
+  color: #475569;
+}
+.phone-input-field {
+  font-size: 14px;
+  height: 40px;
+  width: 300px;
+  border: 1px solid #d7dfe9;
+  color: #64748b;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-top: 5px;
+  padding-left: 10px;
+  color: #64748b;
+}
+.phone-input-field:focus {
+  outline: none;
+  border-color: #4d90fe;
+  box-shadow: 0 0 5px rgba(77, 144, 254, 0.5);
+}
+
+.otp-send-button {
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  width: 100px;
+  font-family: 'Roboto';
+  color: #ffffff;
+  border: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 6px;
+  background-color: green;
+  margin-top: 20px;
+  cursor: pointer;
+  outline: none;
+}
+.explore-button {
+  background-color: #0967d2;
+  cursor: pointer;
+}
+.retry-button {
+  background-color: red;
+}
+.phone-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.otp-card-container {
+  height: 500px;
+  width: 500px;
+}
+.otp-section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding-left: 100px;
+  padding-right: 200px;
+}
+.otp-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 300px;
+  width: 500px;
+}
+.otp-image {
+  height: 500px;
+  width: 450px;
+  border-radius: 6px;
+}
+.captcha {
+  font-size: 14px;
+  color: red;
+  font-weight: 600;
+  font-family: 'Roboto';
+}
+.recaptcha-container {
+  margin-top: 10px;
+}
+.success-msg {
+  color: green;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  margin-bottom: 10px;
+}

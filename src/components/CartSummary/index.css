@@ -1,0 +1,30 @@
+/* Write your CSS here */
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.summary-head {
+  color: black;
+  font-size: 27px;
+}
+.summary-price {
+  color: #0967d2;
+  padding-left: 10px;
+}
+.summary-para {
+  color: black;
+}
+.summary-button {
+  height: auto;
+  width: 100px;
+  padding: 10px;
+  background-color: #0967d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,125 @@
+.hello-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
+  padding: 64px 48px 64px 48px;
+}
+.input-container2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  margin-right: 20px;
+}
+.login-button2 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 220px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  margin-right: 10px;
+  background-color: rgb(53, 134, 110);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.login-button3 {
+  background-color: #0b69ff;
+}
+.mirror {
+  color: #0b69ff;
+  margin-left: 120px;
+}
+.hello {
+  display: flex;
+}
+.button {
+  position: relative;
+  background-color: #04aa6d;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: '';
+  background: #0b69ff;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.p-button {
+  position: relative;
+  background-color: #04aa6d;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.p-button:after {
+  content: '';
+  background: rgb(53, 134, 110);
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.p-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.password-input-field2 {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #64748b;
+  border-radius: 2px;
+  width: 220px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+}

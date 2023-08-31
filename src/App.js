@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
+import axios from 'axios'
 
 import LoginForm from './components/LoginForm'
 import SignupForm from './components/SignupForm'
@@ -10,7 +11,6 @@ import Cart from './components/Cart'
 import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import CartContext from './context/CartContext'
-import UserContext from './context/UserContext'
 import PhoneAuthentication from './components/PhoneAuthentication'
 import './App.css'
 /* prettier-ignore */
@@ -20,24 +20,13 @@ class App extends Component {
     cartList: [],
   }
 
+
   removeAllCartItemsOP = () => {
     this.setState({
       cartList: [],
     })
   }
    
-
-  getName =() => {
-      const {Name} = this.state
-      console.log(Name)
-  }
-
-    setName = name => {
-        this.setState({
-          Name: name,
-        },this.getName)
-      }
-
   removeCartItem = id => {
     const {cartList} = this.state
     const updatedCartList = cartList.filter(each => each.id !== id)
@@ -107,15 +96,8 @@ class App extends Component {
       >
         <Switch>
         <Route exact path="/signIn" component={SignupForm} />
-        <UserContext.Provider
-          value={{
-            Name,
-            setName: this.setName,
-          }}
-        > 
           <Route exact path="/login" component={LoginForm} />
           <ProtectedRoute exact path="/" component={Home} />
-         </UserContext.Provider> 
           <ProtectedRoute exact path="/auth" component={PhoneAuthentication} />
           <ProtectedRoute exact path="/products" component={Products} />
           <ProtectedRoute

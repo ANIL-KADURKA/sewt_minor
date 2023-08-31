@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
+import axios from 'axios'
 
 import CartContext from '../../context/CartContext'
 
@@ -44,6 +45,26 @@ class ProductItemDetails extends Component {
     title: data.title,
     totalReviews: data.total_reviews,
   })
+
+  setCartProducts = async (productData) => {
+    const id = Cookies.get('user_id')
+    console.log(id)
+    console.log(productData)
+    console.log(id)
+    try {
+      const response = await axios.post(
+        'http://localhost:9000/user/cart',
+        {...productData,id}
+    )
+      console.log(response.data)
+      console.log('Hello World')
+      this.onSubmitSuccess(response.data)
+    } catch (error) {
+      const errorMsg = 'An Error Occurred in Adding to cart '
+      console.log(errorMsg)
+      console.error(error)
+    }
+  }
 
   getProductData = async () => {
     const {match} = this.props
@@ -138,6 +159,7 @@ class ProductItemDetails extends Component {
             setTimeout(() => {
             this.setState({showPopUp: false})
             }, 5000) 
+          this.setCartProducts({...productData,quantity})
           addCartItem({...productData, quantity})
         }
         const {showPopUp} = this.state 

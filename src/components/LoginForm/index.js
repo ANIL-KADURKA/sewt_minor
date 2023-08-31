@@ -3,8 +3,6 @@ import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 
-import UserContext from '../../context/UserContext'
-
 import './index.css'
 
 /* prettier-ignore */
@@ -32,13 +30,16 @@ class LoginForm extends Component {
   }
 
   onSubmitSuccess = data => {
-    const {jwtToken, message, accountType} = data
+    const {jwtToken, message, accountType,id} = data
     Cookies.set('Token', jwtToken, {
       expires: 30,
     })
     this.setState({success: true,accountTypOr:accountType})
     const {accountTypOr} = this.state
     console.log(message)
+     Cookies.set('user_id', id, {
+      expires: 30,
+    })
     const helloOp = accountTypOr
     console.log(helloOp)
   }
@@ -58,6 +59,9 @@ class LoginForm extends Component {
   submitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
+     Cookies.set('username', username, {
+      expires: 30,
+    })
     console.log(username,password)
     const userName = username
     const passWord = password
@@ -69,7 +73,7 @@ class LoginForm extends Component {
        const errorMsg = "Invalid Details"
        this.setState({showSubmitError: true, errorMsg})
        return 
-   }    
+   } 
     try {
       const response = await axios.post(
         'http://localhost:9000/user/login',
@@ -78,11 +82,6 @@ class LoginForm extends Component {
       console.log(response.data)
       console.log('Hello World')
       this.onSubmitSuccess(response.data)
-      const {setName} = this.context
-      setName(username)
-      Cookies.set('user_name', username, {
-      expires: 30,
-    })
     } catch (error) {
       const errorMsg = 'An Error Occurred in SingIn'
       console.log(errorMsg)
@@ -193,7 +192,5 @@ class LoginForm extends Component {
     )
   }
 }
-
-LoginForm.contextType = UserContext
 
 export default LoginForm

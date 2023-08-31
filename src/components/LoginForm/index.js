@@ -80,6 +80,9 @@ class LoginForm extends Component {
       this.onSubmitSuccess(response.data)
       const {setName} = this.context
       setName(username)
+      Cookies.set('user_name', username, {
+      expires: 30,
+    })
     } catch (error) {
       const errorMsg = 'An Error Occurred in SingIn'
       console.log(errorMsg)

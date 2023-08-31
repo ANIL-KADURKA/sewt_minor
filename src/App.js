@@ -18,7 +18,6 @@ import './App.css'
 class App extends Component {
   state = {
     cartList: [],
-    Name: 'anil',
   }
 
   removeAllCartItemsOP = () => {

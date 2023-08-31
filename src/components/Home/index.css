@@ -9,6 +9,14 @@
   width: 90%;
   max-width: 1110px;
 }
+.home-heading2 {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 1.2;
+  text-align: center;
+}
 
 @media screen and (min-width: 768px) {
   .home-container {

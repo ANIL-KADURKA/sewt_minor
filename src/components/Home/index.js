@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import Cookies from 'js-cookie'
 import Header from '../Header'
 import UserContext from '../../context/UserContext'
 
@@ -8,13 +9,15 @@ const Home = () => (
   <UserContext.Consumer>
     {value => {
       const {Name} = value
+      const NameOfUser = Cookies.get('username')
       console.log(Name)
       return (
         <>
           <Header />
           <div className="home-container">
             <div className="home-content">
-              <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
+              <h1 className="home-heading2">{{NameOfUser}}</h1>
+              <h3 className="home-heading">Clothes That Get YOU Noticed </h3>
               <img
                 src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
                 alt="clothes that get you noticed"

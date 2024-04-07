@@ -42,6 +42,7 @@ class SignupForm extends Component {
   }
 
   onClickLoginButton=() => {
+    console.log("b");
     const {history} = this.props
     history.replace('/login')
   }
@@ -269,6 +270,7 @@ class SignupForm extends Component {
             </button>
             <button
               type="button"
+              aria-label="Button Label 2"
               onClick={this.onClickLoginButton}
               className="login-button2 login-button3 button"
             >

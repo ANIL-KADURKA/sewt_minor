@@ -11,6 +11,7 @@ const PopUp = props => {
     <div className={`popup ${show ? 'show' : ''}`}>
         <span className="hello-popup">Item Added to Cart! 
         <button
+         aria-label="Button Label3212"
         className="delete-button-pop-up"
         type="button"
         onClick={onRemovePopUp}

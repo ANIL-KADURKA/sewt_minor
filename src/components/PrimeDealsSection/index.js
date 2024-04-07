@@ -30,6 +30,7 @@ class PrimeDealsSection extends Component {
 
     const jwtToken = Cookies.get('jwt_token')
 
+    console.log(jwtToken)
     const apiUrl = 'https://apis.ccbp.in/prime-deals'
     const options = {
       headers: {
@@ -38,6 +39,7 @@ class PrimeDealsSection extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
+    console.log(response)
     if (response.ok === true) {
       const fetchedData = await response.json()
       const updatedData = fetchedData.prime_deals.map(product => ({

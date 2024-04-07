@@ -5,6 +5,8 @@ import CartContext from '../../context/CartContext'
 
 import './index.css'
 
+/* prettier-ignore */
+
 const CartItem = props => (
   <CartContext.Consumer>
     {value => {
@@ -41,13 +43,14 @@ const CartItem = props => (
             <div className="cart-quantity-container">
               <button
                 type="button"
+                aria-label="Button Label3"
                 className="quantity-controller-button"
                 onClick={onDecrementCartItemQuantity}
               >
                 <BsDashSquare data-testid="minus" color="#52606D" size={12} />
               </button>
               <p className="cart-quantity">{quantity}</p>
-              <button type="button" className="quantity-controller-button">
+              <button type="button"   aria-label="Button Label34"  className="quantity-controller-button">
                 <BsPlusSquare
                   color="#52606D"
                   size={12}
@@ -69,6 +72,7 @@ const CartItem = props => (
             </div>
           </div>
           <button
+           aria-label="Button Label323"
             className="delete-button"
             type="button"
             onClick={onRemoveCartItem}

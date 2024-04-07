@@ -25,8 +25,8 @@ class LoginForm extends Component {
   }
 
   onClickSignUp = () => {
-      const {history} = this.props
-      history.replace('/SignIn')
+    const {history} = this.props
+    history.replace('/SignIn')
   }
 
   onSubmitSuccess = data => {
@@ -97,6 +97,9 @@ class LoginForm extends Component {
         userDetails = {username: 'raja', password: 'raja@2021'}
       }
       const url = 'https://apis.ccbp.in/login'
+
+      console.log("Hyderabad")
+      console.log(userDetails)
       const options = {
         method: 'POST',
         body: JSON.stringify(userDetails),
